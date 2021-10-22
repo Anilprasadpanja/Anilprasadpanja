@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>
+        Tax calculation based on totalsalary.
+    </title>
+</head>
+<body>
+<script type="text/javascript">
+    var empName = prompt("Enter Employee Name :");
+	var empGender = prompt("Enter Employee Gender :");
+	var empDept = prompt("Enter Employee Department :");
+    var empBaicSal = prompt("Enter Employee Basic salary :");
+    empBaicSal = parseInt(empBaicSal);
+    var hra = 24/100 * empBaicSal;
+    hra = parseFloat(hra);
+    var pf = 14/100 * empBaicSal;
+    pf = parseFloat(pf);
+    var totalSal = empBaicSal + hra + pf;
+    totalSal = parseFloat(totalSal);
+    console.log("The Name of the Employee is : " + empName);
+    console.log("The Gender of the Employee is : " + empGender);
+    console.log("The Department of the Employee is : " + empDept);
+    console.log("The basic Salary of the Employee is : " + empBaicSal);
+    console.log("Calculating HRA = 24 Percentage of Basic salary and PF = 14 Percentage of Basic Salary, ")
+    console.log("Total salary Of The Employee (Basic salary + HRA + PF) is : " + totalSal);
+    if(empGender == "male")
+    {
+        if(totalSal >= 500000){
+        console.log("Tax Percentage is 15");
+        } else {
+            if((totalSal >= 300000) && (totalSal < 500000)){
+                console.log("Tax Percentage is 10");
+                } else {
+                    if((totalSal >= 100000) && (totalSal < 300000)){
+                console.log("Tax Percentage is 5");
+                    } else console.log("Not Applicable for Tax Payer");
+                }
+            }
+        }        
+ else {
+        if(totalSal >= 500000){
+            console.log("Tax Percentage is 10");
+        }else {
+            if((totalSal >=300000) && (totalSal < 500000)){
+                console.log("Tax Percentage is 5");
+            }else { 
+                if((totalSal >=100000) && (totalSal < 300000)){
+                    console.log("Tax Percentage is 0");
+                } 
+            }
+        }
+    }
+        
+    </script>
+	</body>
+</html>
